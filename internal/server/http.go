@@ -1,4 +1,4 @@
-package server
+package server 
 
 import (
 	"encoding/json"
@@ -13,16 +13,16 @@ func NewHTTPServer(addr string) *http.Server {
 	r.HandleFunc("/", httpsrv.handleConsume).Methods("GET")
 	return &http.Server{
 		Addr: addr,
-		handler: r,
+		Handler: r,
 	}
 }
 
-type httpServet struct {
+type httpServer struct {
 	Log *Log
 }
 
 func newHTTPServer() *httpServer {
-	return &httpServet {
+	return &httpServer {
 		Log: NewLog(),
 	}
 }
@@ -43,7 +43,7 @@ type ConsumeResponse struct {
 	Record Record `json:"record"`
 }
 
-func (s *httpServer) handleProduce(w http.ResponseWriter, r *http.request){
+func (s *httpServer) handleProduce(w http.ResponseWriter, r *http.Request){
 	defer r.Body.Close()
 
 	var req ProduceRequest

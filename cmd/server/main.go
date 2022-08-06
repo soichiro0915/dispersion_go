@@ -1,7 +1,7 @@
 package main
 
 import (
-	"Log"
+	"log"
 	"github.com/soichiro0915/dispersion_go/internal/server"
 )
 
