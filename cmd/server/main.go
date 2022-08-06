@@ -2,7 +2,7 @@ package main
 
 import (
 	"Log"
-	"github.com/soichiro0915/proglog/internal/server"
+	"github.com/soichiro0915/dispersion_go/internal/server"
 )
 
 func main(){

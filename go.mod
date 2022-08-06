@@ -1,4 +1,4 @@
-module github.com/travisjeffery/proglog
+module github.com/soichiro0915/dispersion_go
 
 go 1.18
 
