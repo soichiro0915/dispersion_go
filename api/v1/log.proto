@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-paacakge kog.v1;
+pacakge log.v1;
 
 option go_package = "github.com/soichiro0915/api/log_v1";
 
