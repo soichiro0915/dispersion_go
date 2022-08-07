@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+paacakge kog.v1;
+
+option go_package = "github.com/soichiro0915/api/log_v1";
+
+message Record {
+  bytes value = 1;
+  uint64 offset = 2;
+}
