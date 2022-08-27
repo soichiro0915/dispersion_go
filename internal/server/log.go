@@ -37,7 +37,7 @@ func(c *Log) Delete(offset uint64) (Record, error) {
 	if offset > uint64(len(c.records)){
 		return Record{}, ErrOffsetNotFound
 	}
-	c.records = append(c.records, Record{})
+	c.records = append(c.records[:offset], c.records[offset+1:]...)
 	
 	return c.records[offset], nil
 }
