@@ -6,7 +6,7 @@ import (
 )
 
 type Log struct {
-	mu sync.Mutex
+	mu sync.Mutex 
 	records []Record
 }
 
@@ -28,6 +28,17 @@ func (c *Log) Read(offset uint64) (Record, error) {
 	if offset >= uint64(len(c.records)) {
 		return Record{}, ErrOffsetNotFound
 	}
+	return c.records[offset], nil
+}
+
+func(c *Log) Delete(offset uint64) (Record, error) {
+	c.mu.Lock()
+	defer c.mu.Unlock()
+	if offset > uint64(len(c.records)){
+		return Record{}, ErrOffsetNotFound
+	}
+	c.records = append(c.records, Record{})
+	
 	return c.records[offset], nil
 }
 
